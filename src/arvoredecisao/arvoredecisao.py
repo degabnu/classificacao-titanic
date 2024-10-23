@@ -34,7 +34,7 @@ print("Relatório de Classificação:\n", classification_report(y_test, y_pred))
 
 # testar com diferentes valores de 'max_depth'
 
-for depth in [2, 3, 5, 10]:
+for depth in [2, 30, 500, 10000]:
     model = DecisionTreeClassifier(criterion='gini', max_depth=depth)
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)

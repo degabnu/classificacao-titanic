@@ -37,9 +37,9 @@ def load_and_process_data(file_path):
         return None
 
 # Carregar os conjuntos de dados
-train_df = load_and_process_data('src/data/train.csv')
-test_df = load_and_process_data('src/data/test.csv')
-gender_submission_df = load_and_process_data('src/data/gender_submission.csv')
+train_df = load_and_process_data('src/titanic/data/train.csv')
+test_df = load_and_process_data('src/titanic/data/test.csv')
+gender_submission_df = load_and_process_data('src/titanic/data/gender_submission.csv')
 
 # Verificando se o DataFrame de treino foi carregado corretamente
 if train_df is not None:
