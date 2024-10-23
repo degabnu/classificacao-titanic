@@ -10,7 +10,7 @@ Este projeto utiliza Python e o algoritmo k-Nearest Neighbors (k-NN) para realiz
 Para executar o script, primeiro instale as dependências necessárias:
 
 ```bash
-pip install scikit-learn pandas
+pip install scikit-learn pandas numpy matplotlib
 ```
 
 Em seguida, execute o script python:
