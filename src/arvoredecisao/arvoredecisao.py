@@ -13,7 +13,7 @@ X = iris.data
 y = iris.target  
 
 # treino (70%) teste (30%)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4) #, random_state=42
 
 # profundidade máxima de 3
 model = DecisionTreeClassifier(criterion='gini', max_depth=3)

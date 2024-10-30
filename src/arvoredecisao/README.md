@@ -29,9 +29,9 @@ A avaliação do modelo utilizando diferentes valores de `max_depth` e critério
 - **Acurácia (sem especificar max_depth):** 1.0
   - **Matriz de Confusão:**
     ```
-    [[19  0  0]
-     [ 0 13  0]
-     [ 0  0 13]]
+    [[19  0  0]  -> classe 0: Setosa
+    [ 0 13  0]  -> classe 1: Versicolor
+    [ 0  0 13]] -> classe 2: Virginica
     ```
   - **Relatório de Classificação:**
     ```
