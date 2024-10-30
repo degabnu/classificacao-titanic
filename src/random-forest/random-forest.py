@@ -13,17 +13,22 @@ X, y = cancer.data, cancer.target
 
 # Criar um DataFrame para facilitar a análise
 df = pd.DataFrame(X, columns=cancer.feature_names)
-df['target'] = y
+df['diagnóstico'] = y
+
+# Mapear os valores do alvo para 'maligno' e 'benigno'
+df['diagnóstico'] = df['diagnóstico'].map({0: 'maligno', 1: 'benigno'})
+
+# Mostrar as 10 primeiras linhas
+print("10 primeiras linhas do conjunto de dados:")
+print(df.head(10))
+
 
 # Verificar a quantidade de amostras benignas e malignas
-print("Quantidade de amostras:")
-malignos = (y == 0).sum()
-benignos = (y == 1).sum()
-print(f"Malignas: {malignos}")
-print(f"Benignas: {benignos}")
+print("\nQuantidade de amostras:")
+print(df['diagnóstico'].value_counts())
 
 # Dividir os dados em conjuntos de treinamento e teste
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
 # Criar e treinar o modelo Random Forest
 rf_model = RandomForestClassifier(n_estimators=100)
@@ -51,13 +56,3 @@ print(cm)
 print("\nMatriz de Confusão com Rótulos:")
 cm_labeled = pd.DataFrame(cm, index=['maligno', 'benigno'], columns=['maligno', 'benigno'])
 print(cm_labeled)
-
-# # Plotar a matriz de confusão
-# plt.figure(figsize=(10,7))
-# sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
-#             xticklabels=['maligno', 'benigno'], 
-#             yticklabels=['maligno', 'benigno'])
-# plt.xlabel('Previsão')
-# plt.ylabel('Valor Real')
-# plt.title('Matriz de Confusão')
-# plt.show()
